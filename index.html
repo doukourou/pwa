@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>en ligne </title>
     <!-- on elie le manifest.json pour que l'app soit instalable -->
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="./manifest.json">
 
     <!-- on vas charger le service worker 
      -->
@@ -14,7 +14,7 @@
         window.addEventListener('load', ()=>{
             // on verifie si le service worker est disponible pour eviter de planter le navigateur 
             if("serviceWorker" in navigator){
-                navigator.serviceWorker.register('/sw.js')
+                navigator.serviceWorker.register('./sw.js')
             }
         } )
         
