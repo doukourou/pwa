@@ -18,7 +18,7 @@ self.addEventListener('install',(event)=>{
 
         // en ce moment pour tout regrouper je fasi comme pour la suppresion des key 
         // on met tout dans une promesse et on map le tout 
-        await Promise.all([...CACHED_FILES, "/page2.html"].map((path)=>{
+        await Promise.all([...CACHED_FILES, "pwa/page2.html"].map((path)=>{
             return cache.add(new Request(path))
         }))
 
@@ -84,7 +84,7 @@ self.addEventListener('fetch', (event)=>{
                 const cache = await caches.open(PREFIX)
                 // et on fait notre requette 
                 // egalement pour le style il faut que je le sauvegarde le style dans le cache afin de pouvoir le retourner en meme temps que la page de gors connexion
-                return  await cache.match("/page2.html")
+                return  await cache.match("pwa/page2.html")
             }
             
         })())
